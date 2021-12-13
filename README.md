@@ -2,36 +2,84 @@
 
 ## Project Name
 
-The name of your project.
+Common Cast
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+This project will compare the casts of two movies submitted by the user, and return any cast members that appear in both movies.
 
 ## API and Data Sample
+API: https://imdb-api.com
+```JSON
+{
+    "imDbId": "tt0110413",
+    "title": "Léon: The Professional",
+    "fullTitle": "Léon: The Professional (1994)",
+    "type": "Movie",
+    "year": "1994",
+    "directors": {
+        "job": "Director",
+        "items": [
+            {
+                "id": "nm0000108",
+                "name": "Luc Besson",
+                "description": ""
+            }
+        ]
+    },
+    "writers": {
+        "job": "Writer",
+        "items": [
+            {
+                "id": "nm0000108",
+                "name": "Luc Besson",
+                "description": "(written by)"
+            }
+        ]
+    },
+    "actors": [
+        {
+            "id": "nm0000606",
+            "image": "https://imdb-api.com/images/original/MV5BMTgzNjA1MjY2M15BMl5BanBnXkFtZTYwMjgzOTk0._V1_Ratio0.7273_AL_.jpg",
+            "name": "Jean Reno",
+            "asCharacter": "Leon"
+        },
+        {
+            "id": "nm0000198",
+            "image": "https://imdb-api.com/images/original/MV5BMTc3NTM4MzQ5MV5BMl5BanBnXkFtZTcwOTE4MDczNw@@._V1_Ratio0.7273_AL_.jpg",
+            "name": "Gary Oldman",
+            "asCharacter": "Stansfield"
+        },
+        {
+            "id": "nm0000204",
+            "image": "https://imdb-api.com/images/original/MV5BYzU0ZGRhZWItMGJlNy00YzlkLWIzOWYtNDA2NzlhMDg3YjMwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_Ratio0.7273_AL_.jpg",
+            "name": "Natalie Portman",
+            "asCharacter": "Mathilda"
+        }
+```
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
 
 ## Wireframes
+https://whimsical.com/common-cast-wireframe-MGoBMaE8U3rSr5MwrFE8vE
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+There will be two search bars where movie titles should be entered. Beneath the search bars there will be designated areas to display images and titles of the selected movies, as well as any cast members that appear in both films.
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Render data on page
+- Fetch the ID# of slected queries 
+- Find duplicates in the arrays of cast member names
+- Display a list of names to the designated area
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
 - Add second API
-- Use local storage to save user favorites
+- Add more information on displayed movies
+- Add more features/information for displayed actors
 
 ## Project Schedule
 
@@ -51,7 +99,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+https://whimsical.com/priority-matrix-PBjuRWvcdLxymL1dVmpwMu
+
 
 ## Timeframes
 
@@ -63,7 +112,16 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
 | Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Adding page functionality in Javascript | H | 3hrs| 2.5hrs | 2.5hrs |
+| Writing sorting algorithm | H | 3hrs| 2.5hrs | 2.5hrs |
+| Linking images to display areas | H | 3hrs| 2.5hrs | 2.5hrs |
+| Appending new elements to the DOM | H | 3hrs| 2.5hrs | 2.5hrs |
+| Cleaning code | M | 3hrs| 2.5hrs | 2.5hrs |
+| Testing | H | 3hrs| 2.5hrs | 2.5hrs |
+| Debugging | H | 3hrs| 2.5hrs | 2.5hrs |
+| Improve design functionality | M | 3hrs| 2.5hrs | 2.5hrs |
+| Improve design aesthetics | L | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 33hrs| 5hrs | 5hrs |
 
 ## Code Snippet
 
