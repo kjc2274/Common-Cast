@@ -67,30 +67,30 @@ async function getCast1(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
     const cast = res.data.actors;
-    console.log(cast);
+    // console.log(cast);
     castArray1 = [];
     for (let i = 0; i < cast.length; i++){
     castArray1.push(cast[i].name);
     }
-    console.log(castArray1);
+    // console.log(castArray1);
 };
 
 async function getCast2(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
     const cast = res.data.actors;
-    console.log(cast);
+    // console.log(cast);
     castArray2 = [];
     for (let i = 0; i < cast.length; i++){
     castArray2.push(cast[i].name);
     }
-    console.log(castArray2);
+    // console.log(castArray2);
 };
 
 function findActors(event){
     event.preventDefault();
     actorDisplay.innerText = "";
-    document.getElementById("actor-display").style.padding = "0 50px 100px 50px";
+    document.getElementById("actor-display").style.padding = "0 0 100px 0";
     let newArray = castArray1.concat(castArray2);
     const count = names =>
   names.reduce((a, b) => ({ ...a,
