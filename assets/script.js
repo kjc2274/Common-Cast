@@ -5,6 +5,7 @@ const searchInput2 = document.querySelector("#search2");
 const button = document.querySelector("#find");
 const movieDisplay1 = document.querySelector("#display1");
 const movieDisplay2 = document.querySelector("#display2");
+const actorDisplay = document.querySelector("#actor-display");
 let castArray1 = [];
 let castArray2 = [];
 
@@ -67,6 +68,7 @@ async function getCast1(movie){
     const res = await axios.get(url);
     const cast = res.data.actors;
     console.log(cast);
+    castArray1 = [];
     for (let i = 0; i < cast.length; i++){
     castArray1.push(cast[i].name);
     }
@@ -78,14 +80,33 @@ async function getCast2(movie){
     const res = await axios.get(url);
     const cast = res.data.actors;
     console.log(cast);
+    castArray2 = [];
     for (let i = 0; i < cast.length; i++){
     castArray2.push(cast[i].name);
     }
     console.log(castArray2);
 };
 
+function findActors(event){
+    event.preventDefault();
+    let newArray = castArray1.concat(castArray2);
+    const count = names =>
+  names.reduce((a, b) => ({ ...a,
+    [b]: (a[b] || 0) + 1
+  }), {}) 
+
+const duplicates = dict =>
+  Object.keys(dict).filter((a) => dict[a] > 1)
+    let actors = duplicates(count(newArray));
+    console.log(actors);
+  for(let i = 0; i < actors.length; i++) {
+    let actorName = document.createElement('h4');
+    actorName.innerText = `${actors[i]}`;
+    actorDisplay.appendChild(actorName);
+  };
+  };
 
 
 search1.addEventListener("submit", getMovie1);
 search2.addEventListener("submit", getMovie2);
-// button.addEventListener("click", findActors);
+button.addEventListener("click", findActors);
