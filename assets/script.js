@@ -2,9 +2,11 @@ const search1 = document.querySelector("#input1");
 const search2 = document.querySelector("#input2");
 const searchInput1 = document.querySelector("#search1");
 const searchInput2 = document.querySelector("#search2");
-const button = document.querySelector("#button1");
+const button = document.querySelector("#find");
 const movieDisplay1 = document.querySelector("#display1");
 const movieDisplay2 = document.querySelector("#display2");
+let castArray1 = [];
+let castArray2 = [];
 
 async function getMovie1(event){
     event.preventDefault();
@@ -14,7 +16,8 @@ async function getMovie1(event){
     const movie = res.data.Search[0];
     displayMovie1(movie);
     const id = res.data.Search[0].imdbID;
-    console.log(id);
+    // console.log(id);
+    getCast1(id);
     // return movie;    
 };
 
@@ -26,7 +29,8 @@ async function getMovie2(event){
     const movie = res.data.Search[0];
     displayMovie2(movie);
     const id = res.data.Search[0].imdbID;
-    console.log(id);
+    // console.log(id);
+    getCast2(id);
     // return movie;    
 };
 
@@ -58,21 +62,30 @@ function displayMovie2(movie){
     movieDisplay2.appendChild(poster);
 };
 
-async function getCast(movie){
+async function getCast1(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
-    const cast = res.data;
+    const cast = res.data.actors;
     console.log(cast);
+    for (let i = 0; i < cast.length; i++){
+    castArray1.push(cast[i].name);
+    }
+    console.log(castArray1);
 };
 
-async function getCast(movie){
+async function getCast2(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
-    const cast = res.data;
+    const cast = res.data.actors;
     console.log(cast);
+    for (let i = 0; i < cast.length; i++){
+    castArray2.push(cast[i].name);
+    }
+    console.log(castArray2);
 };
 
 
 
 search1.addEventListener("submit", getMovie1);
 search2.addEventListener("submit", getMovie2);
+// button.addEventListener("click", findActors);
