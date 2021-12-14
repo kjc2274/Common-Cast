@@ -50,6 +50,7 @@ div{
     border: solid;
 }
 #actor-display > h4{
+    display: flex;
     margin: 10px 10px;
 }
 div2{

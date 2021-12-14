@@ -8,6 +8,7 @@ const movieDisplay2 = document.querySelector("#display2");
 const actorDisplay = document.querySelector("#actor-display");
 let castArray1 = [];
 let castArray2 = [];
+let actorImages = [];
 
 async function getMovie1(event){
     event.preventDefault();
@@ -79,12 +80,14 @@ async function getCast2(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
     const cast = res.data.actors;
-    // console.log(cast);
+    console.log(cast);
     castArray2 = [];
+    actorImages = [];
     for (let i = 0; i < cast.length; i++){
     castArray2.push(cast[i].name);
+    actorImages.push(cast[i].image)
     }
-    // console.log(castArray2);
+    console.log(actorImages);
 };
 
 function findActors(event){
@@ -92,6 +95,8 @@ function findActors(event){
     actorDisplay.innerText = "";
     document.getElementById("actor-display").style.padding = "0 0 100px 0";
     let newArray = castArray1.concat(castArray2);
+
+    //next 8 lines taken from: https://stackoverflow.com/questions/840781/get-all-non-unique-values-i-e-duplicate-more-than-one-occurrence-in-an-array
     const count = names =>
   names.reduce((a, b) => ({ ...a,
     [b]: (a[b] || 0) + 1
@@ -105,8 +110,15 @@ const duplicates = dict =>
     let actorName = document.createElement('h4');
     actorName.innerText = `${actors[i]}`;
     actorDisplay.appendChild(actorName);
+
+    let actorIndex = castArray2.indexOf(actors[i]);
+    let actorImage = document.createElement('img');
+    actorImage.src = actorImages[actorIndex];
+    actorImage.alt = `Image of ${actorName}`;
+    actorName.appendChild(actorImage);
+    actorImage.style.width = '5vw' 
   };
-  };
+};
 
 
 search1.addEventListener("submit", getMovie1);
