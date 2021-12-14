@@ -89,6 +89,8 @@ async function getCast2(movie){
 
 function findActors(event){
     event.preventDefault();
+    actorDisplay.innerText = "";
+    document.getElementById("actor-display").style.padding = "0 50px 100px 50px";
     let newArray = castArray1.concat(castArray2);
     const count = names =>
   names.reduce((a, b) => ({ ...a,
@@ -98,7 +100,7 @@ function findActors(event){
 const duplicates = dict =>
   Object.keys(dict).filter((a) => dict[a] > 1)
     let actors = duplicates(count(newArray));
-    console.log(actors);
+    // console.log(actors);
   for(let i = 0; i < actors.length; i++) {
     let actorName = document.createElement('h4');
     actorName.innerText = `${actors[i]}`;
