@@ -8,14 +8,28 @@ body{
 }
 header{
     background-color: rgb(255, 255, 255);
-    padding: 15px;
-    color: rgb(0, 0, 0);
+    /* padding: 15px; */
+    color: rgb(124, 123, 123);
     text-shadow: 2px 2px #ffffff;
     width: 100vw;
     margin-top: -10px;
-    font-size: 25px;
+    font-size: xx-large;
     background: repeating-linear-gradient(
       45deg,
+      #ffffff 0 100px,
+      #000000 100px 200px
+    );
+}
+#headerB{
+    background-color: rgb(255, 255, 255);
+    /* padding: 15px; */
+    color: rgb(124, 123, 123);
+    text-shadow: 2px 2px #ffffff;
+    width: 100vw;
+    margin-top: 2px;
+    font-size: xx-large;
+    background: repeating-linear-gradient(
+      135deg,
       #ffffff 0 100px,
       #000000 100px 200px
     );
@@ -55,6 +69,9 @@ div{
     flex-direction: column;
     align-items: center;
 }
+#actor-display > h4 > img{
+    width: 5vw;
+}
 div2{
     background-color: rgb(97, 97, 97);
     background: linear-gradient(-45deg, grey, rgb(48, 36, 36));
@@ -64,6 +81,7 @@ div2{
     left: 0;
     top: 0;
     font-family: 'EB Garamond', serif;
+    color: rgb(238, 236, 236);
 }
 div3{
     background-color: rgb(97, 97, 97);
@@ -74,8 +92,28 @@ div3{
     right: 0;
     top: 0;
 }
+footer{
+    width: 100%;
+    background-color: rgb(97, 97, 97);
+    margin-bottom: -10px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #ffffff 0 100px,
+      #000000 100px 200px
+    );
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #000000;
+    font-size: large;
+}
 .description{
     padding: 5px;
+    font-size: large;
+}
+h1{
+    margin-bottom: 0px;
+}
+h2{
+    margin-top: 0px;
 }
 h3{
     font-family: 'Fuzzy Bubbles', cursive;
@@ -93,9 +131,15 @@ h3{
         display: none;
     }
     #find{
-        width: 6vw;
-        height: 1.5em;
-        font-size: 1em;
+        width: 4rem;
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+    #actor-display{
+        width: 100%;
+    }
+    #actor-display > h4 > img{
+        width: 10vw;
     }
 }
 @media (max-width: 650px){
@@ -108,8 +152,15 @@ h3{
         width: 60vw;
     }
     #find{
-        width: 6vw;
-        height: 1.5em;
-        font-size: .5em;
+        width: 4rem;
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+    #actor-display > h4 > img{
+        width: 20vw;
+    }
+    h3{
+        background-color: black;
+        padding: 6px 0px;
     }
 }

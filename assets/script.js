@@ -13,7 +13,7 @@ let actorImages = [];
 async function getMovie1(event){
     event.preventDefault();
     const title = searchInput1.value;
-    const url = `http://www.omdbapi.com/?apikey=390956fa&s=${title}`;
+    const url = `http://www.omdbapi.com/?apikey=390956fa&type=movie&s=${title}`;
     const res = await axios.get(url);
     const movie = res.data.Search[0];
     displayMovie1(movie);
@@ -26,7 +26,7 @@ async function getMovie1(event){
 async function getMovie2(event){
     event.preventDefault();
     const title = searchInput2.value;
-    const url = `http://www.omdbapi.com/?apikey=390956fa&s=${title}`;
+    const url = `http://www.omdbapi.com/?apikey=390956fa&type=movie&s=${title}`;
     const res = await axios.get(url);
     const movie = res.data.Search[0];
     displayMovie2(movie);
@@ -125,7 +125,6 @@ function findActors(event){
     actorImage.src = actorImages[actorIndex];
     actorImage.alt = `Image of ${actors[i]}`;
     actorName.appendChild(actorImage);
-    actorImage.style.width = '5vw' 
   };
 }
 };

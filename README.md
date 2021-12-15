@@ -113,14 +113,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Adding Form | H | 3hrs| 2.5hrs | 3.5hrs |
 | Working with API | H | 3hrs| 4hrs | 2.5hrs |
 | Adding page functionality in Javascript | H | 3hrs| 2.5hrs | 2.5hrs |
-| Writing sorting algorithm | H | 3hrs| 2.5hrs | 2.5hrs |
+| Writing sorting algorithm | H | 3hrs| 1.5hrs | 2.5hrs |
 | Linking images to display areas | H | 3hrs| 2.5hrs | 2.5hrs |
 | Appending new elements to the DOM | H | 3hrs| 2.5hrs | 2.5hrs |
 | Cleaning code | M | 3hrs| 2.5hrs | 2.5hrs |
 | Testing | H | 3hrs| 2.5hrs | 2.5hrs |
-| Debugging | H | 3hrs| 2.5hrs | 2.5hrs |
-| Improve design functionality | M | 3hrs| 2.5hrs | 2.5hrs |
-| Improve design aesthetics | L | 3hrs| 2.5hrs | 2.5hrs |
+| Debugging | H | 3hrs| 4hrs | 2.5hrs |
+| Improve design functionality | M | 3hrs| 3hrs | 2.5hrs |
+| Improve design aesthetics | L | 3hrs| 5hrs | 2.5hrs |
 | Total | H | 33hrs| 5hrs | 5hrs |
 
 ## Code Snippet
