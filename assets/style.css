@@ -29,13 +29,14 @@ div{
     justify-content: space-around;
     font-family: 'Fuzzy Bubbles', cursive;
 }
-
+#first-div{
+    background-image: url(../assets/image/Slate2.png);
+    background-size: auto;
+}
 .movie-input{
     padding: 0 10px 0 10px;
 }
-.movie-display > h3{
-    border: none;
-}
+
 .movie-display{
     border: solid;
     display: flex;
@@ -48,7 +49,6 @@ div{
     display: flex;
     flex-wrap: wrap;
     padding: 0 0 400px 0;
-    border: solid;
     justify-content: center;
 }
 #actor-display > h4{
@@ -74,18 +74,38 @@ div3{
     top: 0;
 }
 h3{
-    border: solid;
     font-family: 'Fuzzy Bubbles', cursive;
 }
+#find{
+    width: 6vw;
+    height: 1.5em;
+    font-size: 1.5em;
+}
 @media (max-width: 1000px){
+    #first-div{
+        width: 100%;
+    }
     div2, div3{
         width: 0;
     }
-    
+    #find{
+        width: 6vw;
+        height: 1.5em;
+        font-size: 1em;
+    }
 }
 @media (max-width: 650px){
     div{
         display: flex;
     flex-direction: column;
+    align-items: center;
+    }
+    .movie-display{
+        width: 60vw;
+    }
+    #find{
+        width: 6vw;
+        height: 1.5em;
+        font-size: .5em;
     }
 }
