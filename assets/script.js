@@ -39,6 +39,7 @@ async function getMovie2(event){
 function displayMovie1(movie){
     movieDisplay1.innerHTML = "";
     document.getElementById("display1").style.padding = "0";
+    document.getElementById("display1").style.visibility = "visible";
 
     const title = document.createElement("h3");
     title.innerText = movie.Title;
@@ -53,6 +54,7 @@ function displayMovie1(movie){
 function displayMovie2(movie){
     movieDisplay2.innerHTML = "";
     document.getElementById("display2").style.padding = "0";
+    document.getElementById("display2").style.visibility = "visible";
 
     const title = document.createElement("h3");
     title.innerText = movie.Title;

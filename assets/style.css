@@ -15,11 +15,9 @@ header{
     margin-top: -10px;
     font-size: 25px;
     background: repeating-linear-gradient(
-      135deg,
-      #ffffff,
-      #ffffff 100px,
-      #000000 10px,
-      #000000 200px
+      45deg,
+      #ffffff 0 100px,
+      #000000 100px 200px
     );
 }
 div{
@@ -31,13 +29,13 @@ div{
 }
 #first-div{
     background-image: url(../assets/image/Slate2.png);
-    background-size: auto;
 }
 .movie-input{
     padding: 0 10px 0 10px;
 }
 
 .movie-display{
+    visibility: hidden;
     border: solid;
     display: flex;
     flex-direction: column-reverse;
@@ -59,19 +57,25 @@ div{
 }
 div2{
     background-color: rgb(97, 97, 97);
+    background: linear-gradient(-45deg, grey, rgb(48, 36, 36));
     height: 100%;
     width: 19vw;
     position: fixed;
     left: 0;
     top: 0;
+    font-family: 'EB Garamond', serif;
 }
 div3{
     background-color: rgb(97, 97, 97);
+    background: linear-gradient(45deg, grey, rgb(48, 36, 36));
     height: 100%;
     width: 19vw;
     position: fixed;
     right: 0;
     top: 0;
+}
+.description{
+    padding: 5px;
 }
 h3{
     font-family: 'Fuzzy Bubbles', cursive;
@@ -86,7 +90,7 @@ h3{
         width: 100%;
     }
     div2, div3{
-        width: 0;
+        display: none;
     }
     #find{
         width: 6vw;
