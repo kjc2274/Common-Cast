@@ -29,6 +29,7 @@ div{
     justify-content: space-around;
     font-family: 'Fuzzy Bubbles', cursive;
 }
+
 .movie-input{
     padding: 0 10px 0 10px;
 }
@@ -48,10 +49,13 @@ div{
     flex-wrap: wrap;
     padding: 0 0 400px 0;
     border: solid;
+    justify-content: center;
 }
 #actor-display > h4{
     display: flex;
     margin: 10px 10px;
+    flex-direction: column;
+    align-items: center;
 }
 div2{
     background-color: rgb(97, 97, 97);
