@@ -1,5 +1,7 @@
 const search1 = document.querySelector("#input1");
 const search2 = document.querySelector("#input2");
+const info = document.querySelector('#info');
+const info2 = document.querySelector('#info2');
 const searchInput1 = document.querySelector("#search1");
 const searchInput2 = document.querySelector("#search2");
 const button = document.querySelector("#find");
@@ -13,27 +15,23 @@ let actorImages = [];
 async function getMovie1(event){
     event.preventDefault();
     const title = searchInput1.value;
-    const url = `http://www.omdbapi.com/?apikey=390956fa&type=movie&s=${title}`;
+    const url = `https://www.omdbapi.com/?apikey=390956fa&type=movie&s=${title}`;
     const res = await axios.get(url);
     const movie = res.data.Search[0];
     displayMovie1(movie);
     const id = res.data.Search[0].imdbID;
-    // console.log(id);
     getCast1(id);
-    // return movie;    
 };
 
 async function getMovie2(event){
     event.preventDefault();
     const title = searchInput2.value;
-    const url = `http://www.omdbapi.com/?apikey=390956fa&type=movie&s=${title}`;
+    const url = `https://www.omdbapi.com/?apikey=390956fa&type=movie&s=${title}`;
     const res = await axios.get(url);
     const movie = res.data.Search[0];
     displayMovie2(movie);
     const id = res.data.Search[0].imdbID;
-    // console.log(id);
     getCast2(id);
-    // return movie;    
 };
 
 function displayMovie1(movie){
@@ -70,26 +68,22 @@ async function getCast1(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
     const cast = res.data.actors;
-    // console.log(cast);
     castArray1 = [];
     for (let i = 0; i < cast.length; i++){
     castArray1.push(cast[i].name);
     }
-    // console.log(castArray1);
-};
+  };
 
 async function getCast2(movie){
     const url = `https://imdb-api.com/en/API/FullCast/k_qfgt5lxg/${movie}`;
     const res = await axios.get(url);
     const cast = res.data.actors;
-    // console.log(cast);
     castArray2 = [];
     actorImages = [];
     for (let i = 0; i < cast.length; i++){
     castArray2.push(cast[i].name);
     actorImages.push(cast[i].image)
     }
-    // console.log(actorImages);
 };
 
 function findActors(event){
@@ -109,7 +103,7 @@ function findActors(event){
     let actors = duplicates(count(newArray));
     
     
-    // console.log(actors);
+    
     if(actors.length == 0){
         let h3 = document.createElement('h3');
         h3.innerText = "Sorry, it looks like we don't have anyone who was in both films you selected.";
@@ -129,7 +123,16 @@ function findActors(event){
 }
 };
 
+function displayDescription(){
+  document.querySelector(".description").classList.toggle("visible");
+}
+function displayDescriptionAlt(){
+  document.querySelector(".descriptionAlt").classList.toggle("visible");
+}
+
 
 search1.addEventListener("submit", getMovie1);
 search2.addEventListener("submit", getMovie2);
 button.addEventListener("click", findActors);
+info.addEventListener("click", displayDescription);
+info2.addEventListener("click", displayDescriptionAlt);
