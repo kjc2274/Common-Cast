@@ -4,6 +4,7 @@
 
 Common Cast
 
+https://kjc2274.github.io/Common-Cast/
 ## Project Description
 
 This project will compare the casts of two movies submitted by the user, and return any cast members that appear in both movies.
@@ -121,16 +122,24 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Debugging | H | 3hrs| 4hrs | 2.5hrs |
 | Improve design functionality | M | 3hrs| 3hrs | 2.5hrs |
 | Improve design aesthetics | L | 3hrs| 5hrs | 2.5hrs |
-| Total | H | 33hrs| 5hrs | 5hrs |
+| Total | H | 33hrs| 32.5hrs | 5hrs |
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+  for(let i = 0; i < actors.length; i++) {
+    let actorName = document.createElement('h4');
+    actorName.innerText = `${actors[i]}`;
+    actorDisplay.appendChild(actorName);
+
+    let actorIndex = castArray2.indexOf(actors[i]);
+    let actorImage = document.createElement('img');
+    actorImage.src = actorImages[actorIndex];
+    actorImage.alt = `Image of ${actors[i]}`;
+    actorName.appendChild(actorImage);
+  };
+  //This allows me to retrive the significant data previously stored in an array.
 ```
 
 ## Change Log
